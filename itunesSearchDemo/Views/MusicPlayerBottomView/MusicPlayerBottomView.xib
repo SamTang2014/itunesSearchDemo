@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MusicPlayerBottomView" customModule="itunesSearchDemo" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="4oD-G0-JdA"/>
+                <outlet property="iconImageView" destination="JHX-nK-xEZ" id="NBn-Dm-bPm"/>
+                <outlet property="musicProgressVIew" destination="Wzt-gF-Y1p" id="ubZ-fM-Kl9"/>
+                <outlet property="playButton" destination="bHk-8p-5TP" id="d2U-Oj-yH0"/>
+                <outlet property="songNameLabel" destination="LUS-bj-gWe" id="Co6-Hv-Aaz"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="579" height="100"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bHk-8p-5TP">
+                    <rect key="frame" x="529" y="35" width="30" height="30"/>
+                    <connections>
+                        <action selector="clickPlayButton:" destination="-1" eventType="touchUpInside" id="KJv-0p-x5k"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JHX-nK-xEZ">
+                    <rect key="frame" x="20" y="10.5" width="80" height="80"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="4Ye-ys-de2"/>
+                        <constraint firstAttribute="height" constant="80" id="B6Z-9g-noR"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LUS-bj-gWe">
+                    <rect key="frame" x="114" y="10" width="48" height="24"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Wzt-gF-Y1p">
+                    <rect key="frame" x="114" y="49" width="385" height="2"/>
+                </progressView>
+            </subviews>
+            <color key="backgroundColor" red="0.94479590735257846" green="0.93913844682950909" blue="0.95045336787564771" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="bHk-8p-5TP" secondAttribute="trailing" constant="20" id="2S8-Ry-5cI"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="bHk-8p-5TP" secondAttribute="trailing" constant="20" id="LGD-PH-Zpx"/>
+                <constraint firstItem="JHX-nK-xEZ" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="NQN-ff-Zyi"/>
+                <constraint firstItem="Wzt-gF-Y1p" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="OO2-L1-BTS"/>
+                <constraint firstItem="JHX-nK-xEZ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="Pea-Q3-iHo"/>
+                <constraint firstItem="bHk-8p-5TP" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="SLh-DD-7pM"/>
+                <constraint firstItem="Wzt-gF-Y1p" firstAttribute="leading" secondItem="LUS-bj-gWe" secondAttribute="leading" id="ZIT-a2-FnV"/>
+                <constraint firstItem="LUS-bj-gWe" firstAttribute="leading" secondItem="JHX-nK-xEZ" secondAttribute="trailing" constant="14" id="lIw-jG-Czg"/>
+                <constraint firstItem="LUS-bj-gWe" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="qO5-aE-O9p"/>
+                <constraint firstItem="bHk-8p-5TP" firstAttribute="leading" secondItem="Wzt-gF-Y1p" secondAttribute="trailing" constant="30" id="v7c-Vc-GKO"/>
+                <constraint firstItem="Wzt-gF-Y1p" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="LUS-bj-gWe" secondAttribute="trailing" id="vcy-Fr-l4u"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="118.5" y="1"/>
+        </view>
+    </objects>
+</document>

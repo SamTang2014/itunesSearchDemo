@@ -8,9 +8,13 @@
 
 import UIKit
 import Kingfisher
+import AVFoundation
 
 class ViewController: BaseViewController,UISearchBarDelegate,UITableViewDataSource, UITableViewDelegate {
    
+    @IBOutlet weak var musicPlayerBottomView: MusicPlayerBottomView!
+    
+  
     
     lazy var searchBar = UISearchBar()
     
@@ -23,8 +27,9 @@ class ViewController: BaseViewController,UISearchBarDelegate,UITableViewDataSour
         
         initSearchBar()
         initTableView()
-
+        
     }
+
     
     private func initTableView(){
         resultTableView.register(UINib(nibName: "SearchResultTableViewCell", bundle: nil), forCellReuseIdentifier: "resultCell")
@@ -93,6 +98,21 @@ class ViewController: BaseViewController,UISearchBarDelegate,UITableViewDataSour
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if (tableView.cellForRow(at: indexPath) as? SearchResultTableViewCell) != nil {
+            
+//            let previewMusic = self.itunesResponse.results![indexPath.row].previewUrl
+//            playPreviewMusic(url : previewMusic!)
+            musicPlayerBottomView.ituneResponseResult = self.itunesResponse.results![indexPath.row]
+            
+        }
+    }
+    
+    
+   
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

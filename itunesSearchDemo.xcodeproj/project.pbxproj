@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		30558B8821386D1A00D67234 /* MusicPlayerBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30558B8721386D1A00D67234 /* MusicPlayerBottomView.swift */; };
+		30558B8B21386D7D00D67234 /* MusicPlayerBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30558B8A21386D7D00D67234 /* MusicPlayerBottomView.xib */; };
 		30B2D98421370F9800A16FD7 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30B2D98321370F9800A16FD7 /* Alamofire.framework */; };
 		30B2D98821371A8700A16FD7 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B2D98721371A8700A16FD7 /* API.swift */; };
 		30B2D98B2137245300A16FD7 /* ItunesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B2D9892137245300A16FD7 /* ItunesResponse.swift */; };
@@ -24,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		30558B8721386D1A00D67234 /* MusicPlayerBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayerBottomView.swift; sourceTree = "<group>"; };
+		30558B8A21386D7D00D67234 /* MusicPlayerBottomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MusicPlayerBottomView.xib; sourceTree = "<group>"; };
 		30B2D97921370ED600A16FD7 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		30B2D98321370F9800A16FD7 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		30B2D98721371A8700A16FD7 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
@@ -58,6 +62,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		30558B8921386D6300D67234 /* MusicPlayerBottomView */ = {
+			isa = PBXGroup;
+			children = (
+				30558B8721386D1A00D67234 /* MusicPlayerBottomView.swift */,
+				30558B8A21386D7D00D67234 /* MusicPlayerBottomView.xib */,
+			);
+			path = MusicPlayerBottomView;
+			sourceTree = "<group>";
+		};
 		30CC2EDD2136FBEE00EA1F6F = {
 			isa = PBXGroup;
 			children = (
@@ -105,7 +118,7 @@
 		30CC2EFC2136FFE900EA1F6F /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				8296BF4F2137B7DB0073CE90 /* Table */,
+				30558B8921386D6300D67234 /* MusicPlayerBottomView */,
 				8296BF4A2137AD550073CE90 /* Cell */,
 			);
 			path = Views;
@@ -146,13 +159,6 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		8296BF4F2137B7DB0073CE90 /* Table */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Table;
-			sourceTree = "<group>";
-		};
 		AC7FB8959733E9CEF8DA67C3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -175,7 +181,6 @@
 				30CC2EE32136FBEE00EA1F6F /* Frameworks */,
 				30CC2EE42136FBEE00EA1F6F /* Resources */,
 				7F3C53FB9F5FBC79B3D0C244 /* [CP] Embed Pods Frameworks */,
-				B3ED81744A420D8FAF1D4017 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -198,6 +203,11 @@
 				TargetAttributes = {
 					30CC2EE52136FBEE00EA1F6F = {
 						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -227,6 +237,7 @@
 				30CC2EF42136FBF000EA1F6F /* LaunchScreen.storyboard in Resources */,
 				30CC2EF12136FBF000EA1F6F /* Assets.xcassets in Resources */,
 				8296BF4E2137AD830073CE90 /* SearchResultTableViewCell.xib in Resources */,
+				30558B8B21386D7D00D67234 /* MusicPlayerBottomView.xib in Resources */,
 				30CC2EEF2136FBEE00EA1F6F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -240,7 +251,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-itunesSearchDemo/Pods-itunesSearchDemo-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-itunesSearchDemo/Pods-itunesSearchDemo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/JGProgressHUD/JGProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
@@ -255,22 +266,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-itunesSearchDemo/Pods-itunesSearchDemo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B3ED81744A420D8FAF1D4017 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-itunesSearchDemo/Pods-itunesSearchDemo-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-itunesSearchDemo/Pods-itunesSearchDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C2D9192223FF031B23B95C03 /* [CP] Check Pods Manifest.lock */ = {
@@ -303,6 +299,7 @@
 				30CC2EEC2136FBEE00EA1F6F /* ViewController.swift in Sources */,
 				30B2D98B2137245300A16FD7 /* ItunesResponse.swift in Sources */,
 				30CC2F0421370DFE00EA1F6F /* NetworkHelper.swift in Sources */,
+				30558B8821386D1A00D67234 /* MusicPlayerBottomView.swift in Sources */,
 				8296BF512137D6750073CE90 /* BaseViewController.swift in Sources */,
 				30B2D98821371A8700A16FD7 /* API.swift in Sources */,
 				30CC2EEA2136FBEE00EA1F6F /* AppDelegate.swift in Sources */,

@@ -8,6 +8,7 @@ target 'itunesSearchDemo' do
   pod 'SwiftyJSON', '~> 4.0'
   pod 'JGProgressHUD'
   pod 'Kingfisher', '~> 4.0'
+  
   # Pods for itunesSearchDemo
 
 end
