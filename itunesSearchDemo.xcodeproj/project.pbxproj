@@ -181,6 +181,7 @@
 				30CC2EE32136FBEE00EA1F6F /* Frameworks */,
 				30CC2EE42136FBEE00EA1F6F /* Resources */,
 				7F3C53FB9F5FBC79B3D0C244 /* [CP] Embed Pods Frameworks */,
+				2FEC9C146AC8E49FDC06D3C8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -245,13 +246,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2FEC9C146AC8E49FDC06D3C8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-itunesSearchDemo/Pods-itunesSearchDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		7F3C53FB9F5FBC79B3D0C244 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-itunesSearchDemo/Pods-itunesSearchDemo-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-itunesSearchDemo/Pods-itunesSearchDemo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/JGProgressHUD/JGProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
@@ -266,7 +282,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-itunesSearchDemo/Pods-itunesSearchDemo-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-itunesSearchDemo/Pods-itunesSearchDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C2D9192223FF031B23B95C03 /* [CP] Check Pods Manifest.lock */ = {

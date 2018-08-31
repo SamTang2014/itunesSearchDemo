@@ -14,8 +14,6 @@ class ViewController: BaseViewController,UISearchBarDelegate,UITableViewDataSour
    
     @IBOutlet weak var musicPlayerBottomView: MusicPlayerBottomView!
     
-  
-    
     lazy var searchBar = UISearchBar()
     
     @IBOutlet weak var resultTableView: UITableView!
@@ -28,6 +26,14 @@ class ViewController: BaseViewController,UISearchBarDelegate,UITableViewDataSour
         initSearchBar()
         initTableView()
         
+        
+  
+    }
+    
+    
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        searchBar.endEditing(true)
     }
 
     
@@ -48,6 +54,7 @@ class ViewController: BaseViewController,UISearchBarDelegate,UITableViewDataSour
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
 
+        self.dismissKeyboard()
         self.showLoading()
         API.searchMusic(
             keyword: searchBar.text!,
@@ -102,8 +109,7 @@ class ViewController: BaseViewController,UISearchBarDelegate,UITableViewDataSour
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if (tableView.cellForRow(at: indexPath) as? SearchResultTableViewCell) != nil {
             
-//            let previewMusic = self.itunesResponse.results![indexPath.row].previewUrl
-//            playPreviewMusic(url : previewMusic!)
+            dismissKeyboard()
             musicPlayerBottomView.ituneResponseResult = self.itunesResponse.results![indexPath.row]
             
         }

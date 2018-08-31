@@ -8,6 +8,8 @@
 
 import UIKit
 import AVFoundation
+import MediaPlayer
+
 
 class MusicPlayerBottomView: UIView {
     
@@ -24,6 +26,7 @@ class MusicPlayerBottomView: UIView {
         didSet {
             isPlayingMusic = true
             playButton.setImage(pauseImage, for: UIControlState.normal)
+            musicProgressVIew.progress = 0
             playPreviewMusic()
             songNameLabel.text = ituneResponseResult?.trackName
             let url = URL(string: (ituneResponseResult?.artworkUrl100!)!)
@@ -165,12 +168,44 @@ class MusicPlayerBottomView: UIView {
         
         playerItem = AVPlayerItem.init(url: url)
         player = AVPlayer.init(playerItem: playerItem)
+        handleBackgroundMusic()
         player?.play()
         
         resetCounter()
         
     }
     
+    private func handleBackgroundMusic(){
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+            print("Playback OK")
+            try AVAudioSession.sharedInstance().setActive(true)
+            print("Session is Active")
+            UIApplication.shared.beginReceivingRemoteControlEvents()
+            setupCommandCenter()
+        } catch {
+            print(error)
+        }
+        
+    }
+    
+    private func setupCommandCenter() {
+        MPNowPlayingInfoCenter.default().nowPlayingInfo = [MPMediaItemPropertyTitle: ituneResponseResult?.trackName]
+        
+        let commandCenter = MPRemoteCommandCenter.shared()
+        commandCenter.playCommand.isEnabled = true
+        commandCenter.pauseCommand.isEnabled = true
+        commandCenter.playCommand.addTarget { [weak self] (event) -> MPRemoteCommandHandlerStatus in
+            self?.updateStatusAndButtonImage()
+            self?.player?.play()
+            return .success
+        }
+        commandCenter.pauseCommand.addTarget { [weak self] (event) -> MPRemoteCommandHandlerStatus in
+            self?.updateStatusAndButtonImage()
+            self?.player?.pause()
+            return .success
+        }
+    }
     
     
     
